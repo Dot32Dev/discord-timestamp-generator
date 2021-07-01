@@ -14,7 +14,7 @@ var minute = d.getUTCMinutes()
 var second = d.getUTCSeconds()
 
 function timestamp(){
- var datum = new Date(Date.UTC(year, month, day + days, hour + hours, minute + minutes, second))
+ var datum = new Date(Date.UTC(year, month, day + days + weeks*7, hour + hours, minute + minutes, second))
  // return datum.getTime()/1000
  document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
 }
