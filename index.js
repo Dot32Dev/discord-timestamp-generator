@@ -61,3 +61,15 @@ document.getElementById("minutes").onmousedown = function(event) {
 	document.getElementById("minutes").innerHTML = `${minutes} minutes`
 	timestamp()
 }
+
+setInterval( ()=>{
+	d = new Date()
+	year = d.getUTCFullYear()
+	month = d.getUTCMonth()
+	day = d.getUTCDate()
+	hour = d.getUTCHours()
+	minute = d.getUTCMinutes()
+	second = d.getUTCSeconds()
+
+	timestamp()
+}, 10000)
