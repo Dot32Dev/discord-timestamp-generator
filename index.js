@@ -63,7 +63,6 @@ document.getElementById("minutes").onmousedown = function(event) {
 }
 
 function copy(){
-  document.getElementById("special").select();
   navigator.clipboard.writeText(htmlDecode(document.getElementById("special").innerHTML));
 }
 
