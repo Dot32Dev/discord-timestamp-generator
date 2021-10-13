@@ -67,3 +67,13 @@ img {
 a {
   color: #99aab5;
 }
+
+#copy {
+  font-size: 20px;
+  background-color: #3ca45c;
+  color: white;
+}
+
+#copy:active {
+  background-color: #2c7743;
+}

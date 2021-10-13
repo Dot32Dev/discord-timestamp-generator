@@ -62,6 +62,15 @@ document.getElementById("minutes").onmousedown = function(event) {
 	timestamp()
 }
 
+function copy(){
+  navigator.clipboard.writeText(htmlDecode(document.querySelector("#special").innerHTML));
+}
+
+function htmlDecode(input) {
+  var doc = new DOMParser().parseFromString(input, "text/html");
+  return doc.documentElement.textContent;
+}
+
 setInterval( ()=>{
 	d = new Date()
 	year = d.getUTCFullYear()
