@@ -26,23 +26,25 @@
 
 			<p>Create a timestamp that automatically counts down the time.</p>
 			<img src="example.png" width=250>
-			<p>Every day, this little embed will count down for you!</p><br>
+			<p>Every day, hour, and minute, this little embed will count down for you! 
+				<br> Right click to subtract time (-2 days will convert to "2 days ago", for example)</p>
 
-			<h2>Select the timeframe:</h2>
+			<div class=highlighted>
+				<h2>Select the timeframe:</h2>
 
-			<div oncontextmenu="return false;"><!-- oncontextmenu="return false;" -->
-				<button id="weeks">0 weeks</button>
-				<button id="days">0 days</button>
-				<button id="hours">0 hours</button>
-				<button id="minutes">0 minutes</button>
-			</div>
-			<p>Right click to subtract time (-2 days will convert to "2 days ago", for example)</p>
+				<div oncontextmenu="return false;"><!-- oncontextmenu="return false;" -->
+					<button id="weeks">0 weeks</button>
+					<button id="days">0 days</button>
+					<button id="hours">0 hours</button>
+					<button id="minutes">0 minutes</button>
+				</div>
 
-			<h3>Copy and paste this into a discord message:</h3>
-			<div>
-				<p id=special>Javscript failed to load<noscript>: please enable it to run this app</noscript></p>
+				<h2>Copy and paste this into a discord message:</h2>
+				<div>
+					<p id=special>Javscript failed to load<noscript>: please enable it to run this app</noscript></p>
 
-				<button id="copy" onclick="copy()"><i class="material-icons">content_copy</i></span></button>
+					<button id="copy" onclick="copy()"><i class="material-icons">content_copy</i></span></button>
+				</div>
 			</div>
 
 			<p>Curious how this works? <a href="https://github.com/Dot32IsCool/discord-timestamp-generator">View the source code</a> and leave a star! <br> Generator created by <a href="https://github.com/Dot32IsCool">Dot32</a>.</p>

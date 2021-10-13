@@ -30,10 +30,10 @@ h5 {
 }
 
 h1 {
-  border-bottom-style: solid;
+/*  border-bottom-style: solid;
   border-bottom-color: #99aab5;
-  border-bottom-width: 1px;
-  display: inline-block;
+  border-bottom-width: 1px;*/
+  /*display: inline-block;*/
 }
 
 button:hover {
@@ -88,6 +88,13 @@ a {
   background-color: #2c7743;
 }
 
+.highlighted {
+  background-color: hsl(225deg 6% 22%);
+  border-radius: 12px;
+  padding: 1px;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -103,4 +110,5 @@ main > div {
   background-color: #2c2f33;
   border-radius: 12px;
   box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
+  padding: 20px;
 }
