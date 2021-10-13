@@ -112,3 +112,27 @@ main > div {
   box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
   padding: 20px;
 }
+
+main > div::before {
+  content: "how are you seeing this";
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-color: #3ca45c;
+  opacity: 0.5;
+}
+
+/*main > div::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 100vh;
+  transform: translate(-450%, -50%);
+  z-index: -1;
+  background-color: #3ca45c;
+  opacity: 0.5;
+}*/
