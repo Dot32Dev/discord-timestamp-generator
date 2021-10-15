@@ -99,7 +99,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 95vh;
-  width: 840px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 20px;
   justify-content: center;
