@@ -1,5 +1,5 @@
 # Discord timestamp generator [![Netlify Status](https://api.netlify.com/api/v1/badges/4d0fb726-b73c-4c4a-b4d1-3ef4c0b36692/deploy-status)](https://app.netlify.com/sites/discordtimestampgenerator/deploys)
-create timestamps that automatically countdown within discord.
+create timers that automatically countdown within discord.
 
 <img width="400" alt="example" src="https://github.com/Dot32IsCool/discord-timestamp-generator/blob/main/banner.png">
 Every day, this little embed will count time for you! <br>
