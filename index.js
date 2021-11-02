@@ -5,6 +5,7 @@ var hours = 0
 var minutes = 0
 var weeks = 0
 
+
 var d = new Date()
 var year = d.getUTCFullYear()
 var month = d.getUTCMonth()
@@ -18,8 +19,22 @@ function timestamp(){
  // return datum.getTime()/1000
  document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
 }
+function timestampglobal(){
+  var global_year = document.getElementById("year").value
+  var global_month = document.getElementById("month").value
+  var global_day = document.getElementById("day").value
+  var global_hour = document.getElementById("hour").value
+  var datum = new Date(Date.UTC(global_year, global_month, global_day, global_hour, 0, 0))
+  // return datum.getTime()/1000
+  document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
+}
 
 timestamp()
+
+document.getElementById("year").addEventListener("onchange", (event) => timestampglobal);
+document.getElementById("month").addEventListener("onchange", (event) => timestampglobal);
+document.getElementById("day").addEventListener("onchange", (event) => timestampglobal);
+document.getElementById("hour").addEventListener("onchange", (event) => timestampglobal);
 
 document.getElementById("weeks").onmousedown = function(event) {
   if (event.which == 3) {
@@ -61,7 +76,27 @@ document.getElementById("minutes").onmousedown = function(event) {
 	document.getElementById("minutes").innerHTML = `${minutes} minutes`
 	timestamp()
 }
-document.getElementById("reset").onmousedown = function(event) {
+
+document.getElementById("globaltoggle").onmousedown = function(event) {
+  var relative = document.getElementById("relative")
+  var nonrelative = document.getElementById("nonrelative")
+
+  var toggleButton = document.getElementById("globaltoggle")
+
+  relative.hidden = !relative.hidden
+  nonrelative.hidden = !nonrelative.hidden
+
+  if (relative.hidden) {
+    toggleButton.innerHTML = "Use relative"
+  } else {
+    toggleButton.innerHTML = "Use non-relative"
+  }
+
+  reset()
+}
+
+//document.getElementByClass("reset").onmousedown = function(event) {
+function reset() {
   weeks = 0
 	document.getElementById("weeks").innerHTML = `${weeks} weeks`
   minutes = 0

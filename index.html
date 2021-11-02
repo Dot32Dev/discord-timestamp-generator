@@ -45,14 +45,24 @@
 			<div class=highlighted>
 				<h2>Select the timeframe:</h2>
 
-				<div oncontextmenu="return false;"><!-- oncontextmenu="return false;" -->
+				<div oncontextmenu="return false;" id="relative" style="margin-bottom: 12px;"><!-- oncontextmenu="return false;" -->
 					<button id="weeks">0 weeks</button>
 					<button id="days">0 days</button>
 					<button id="hours">0 hours</button>
 					<button id="minutes">0 minutes</button>
 
-					<button id="reset"><i class="material-icons">cached</i></button>
+					<button class="reset" onmousedown="reset()"><i class="material-icons">cached</i></button>
 				</div>
+				<div oncontextmenu="return false;" id="nonrelative" hidden=true style="margin-bottom: 12px;"><!-- oncontextmenu="return false;" -->
+					<textarea id="year" placeholder="Year..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
+					<textarea id="month" placeholder="Month..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
+					<textarea id="day" placeholder="Day..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
+					<textarea id="hour" placeholder="Hour..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
+
+					<button class="reset" onmousedown="reset()"><i class="material-icons">cached</i></button>
+				</div>
+
+				<button id="globaltoggle">Use non-relative</button>
 
 				<h2>...And copy paste this into a discord message!</h2>
 				<div>
