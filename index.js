@@ -61,6 +61,17 @@ document.getElementById("minutes").onmousedown = function(event) {
 	document.getElementById("minutes").innerHTML = `${minutes} minutes`
 	timestamp()
 }
+document.getElementById("reset").onmousedown = function(event) {
+  weeks = 0
+	document.getElementById("weeks").innerHTML = `${weeks} weeks`
+  minutes = 0
+  document.getElementById("minutes").innerHTML = `${minutes} minutes`
+  hours = 0
+  document.getElementById("hours").innerHTML = `${hours} hours`
+  days = 0
+  document.getElementById("days").innerHTML = `${days} days`
+	timestamp()
+}
 
 function copy(){
   navigator.clipboard.writeText(htmlDecode(document.getElementById("special").innerHTML));
