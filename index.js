@@ -77,19 +77,16 @@ document.getElementById("minutes").onmousedown = function(event) {
 	timestamp()
 }
 
-document.getElementById("globaltoggle").onmousedown = function(event) {
+document.getElementById("mode").onchange = function (e) {
   var relative = document.getElementById("relative")
   var nonrelative = document.getElementById("nonrelative")
 
-  var toggleButton = document.getElementById("globaltoggle")
-
-  relative.hidden = !relative.hidden
-  nonrelative.hidden = !nonrelative.hidden
-
-  if (relative.hidden) {
-    toggleButton.innerHTML = "Use relative"
+  if (document.getElementById("mode").value == "timeframe") {
+	relative.hidden = false
+	nonrelative.hidden = true
   } else {
-    toggleButton.innerHTML = "Use non-relative"
+	relative.hidden = true
+	nonrelative.hidden = false
   }
 
   reset()
