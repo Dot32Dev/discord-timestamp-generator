@@ -129,5 +129,7 @@ setInterval( ()=>{
   minute = d.getUTCMinutes()
   second = d.getUTCSeconds()
 
-  timestamp()
+  if (relative.hidden == false) {
+    timestamp()
+  }
 }, 10000)
