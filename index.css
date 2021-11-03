@@ -36,6 +36,15 @@ h1 {
   /*display: inline-block;*/
 }
 
+select {
+  font-family: 'Sen', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  border-radius: 12px;
+  background-color: #202225;
+  border-style: none;
+  color: white;
+}
+
 button:hover {
   /*background-color: white;*/
   cursor:pointer;
