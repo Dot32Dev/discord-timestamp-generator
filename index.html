@@ -43,7 +43,12 @@
 				<br> Right click to subtract time (-2 days will convert to "2 days ago", for example)</p>
 
 			<div class=highlighted>
-				<h2>Select the timeframe:</h2>
+				<h2>Select the 
+					<select id="mode">
+						<option value="timeframe">timeframe</option>
+						<option value="date">date</option>
+					</select>
+			      	</h2>
 
 				<div oncontextmenu="return false;" id="relative" style="margin-bottom: 12px;"><!-- oncontextmenu="return false;" -->
 					<button id="weeks">0 weeks</button>
