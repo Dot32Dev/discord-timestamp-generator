@@ -84,9 +84,11 @@ document.getElementById("mode").onchange = function (e) {
   if (document.getElementById("mode").value == "timeframe") {
     relative.hidden = false
     nonrelative.hidden = true
+    reset()
   } else {
     relative.hidden = true
     nonrelative.hidden = false
+    reset()
   }
 
   reset()
@@ -103,10 +105,10 @@ function reset() {
   days = 0
   document.getElementById("days").innerHTML = `${days} days`
 
-  document.getElementById("year").value = ``
-  document.getElementById("month").value = ``
-  document.getElementById("day").value = ``
-  document.getElementById("hour").value = ``
+  document.getElementById("year").value = d.getUTCFullYear()
+  document.getElementById("month").value = d.getUTCMonth()
+  document.getElementById("day").value = d.getUTCDate()
+  document.getElementById("hour").value = d.getUTCHours()
 
   timestamp()
 }
