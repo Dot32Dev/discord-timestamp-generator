@@ -114,6 +114,7 @@ a {
 .reset {
   background-color: #ee4245;
   color: white;
+  padding: 0;
 }
 
 .reset:active {
