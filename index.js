@@ -105,10 +105,10 @@ function reset() {
   days = 0
   document.getElementById("days").innerHTML = `${days} days`
 
-  document.getElementById("year").value = d.getUTCFullYear()
-  document.getElementById("month").value = d.getUTCMonth()
-  document.getElementById("day").value = d.getUTCDate()
-  document.getElementById("hour").value = d.getUTCHours()
+  document.getElementById("year").value = d.getFullYear()
+  document.getElementById("month").value = d.getMonth()
+  document.getElementById("day").value = d.getDate()
+  document.getElementById("hour").value = d.getHours()
 
   timestamp()
 }
