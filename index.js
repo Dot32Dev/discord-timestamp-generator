@@ -14,6 +14,15 @@ var hour = d.getUTCHours()
 var minute = d.getUTCMinutes()
 var second = d.getUTCSeconds()
 
+var timezone = d.getTimezoneOffset()
+if (timezone > 0) {
+  document.getElementById("timezone").innerHTML = "+" + timezone/60 + "h"
+} else if (timezone < 0) {
+  document.getElementById("timezone").innerHTML = timezone/60 + "h"
+} else {
+  document.getElementById("timezone").innerHTML = ""
+}
+
 function timestamp(){
  var datum = new Date(Date.UTC(year, month, day + days + weeks*7, hour + hours, minute + minutes, second))
  // return datum.getTime()/1000
@@ -78,8 +87,8 @@ document.getElementById("minutes").onmousedown = function(event) {
 }
 
 document.getElementById("mode").onchange = function (e) {
-  var relative = document.getElementById("relative")
-  var nonrelative = document.getElementById("nonrelative")
+  var relative = document.querySelector(".relative")
+  var nonrelative = document.querySelector(".nonrelative")
 
   if (document.getElementById("mode").value == "timeframe") {
     relative.hidden = false
@@ -105,10 +114,10 @@ function reset() {
   days = 0
   document.getElementById("days").innerHTML = `${days} days`
 
-  document.getElementById("year").value = d.getFullYear()
-  document.getElementById("month").value = d.getMonth()
-  document.getElementById("day").value = d.getDate()
-  document.getElementById("hour").value = d.getHours()
+  document.getElementById("year").value = d.getUTCFullYear()
+  document.getElementById("month").value = d.getUTCMonth()
+  document.getElementById("day").value = d.getUTCDate()
+  document.getElementById("hour").value = d.getUTCHours()
 
   timestamp()
 }
