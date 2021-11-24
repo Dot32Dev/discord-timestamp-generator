@@ -16,9 +16,9 @@ var second = d.getUTCSeconds()
 
 var timezone = d.getTimezoneOffset()
 if (timezone > 0) {
-  document.getElementById("timezone").innerHTML = "+" + timezone/60 + "h"
+  document.getElementById("timezone").innerHTML = timezone/-60 + "h"
 } else if (timezone < 0) {
-  document.getElementById("timezone").innerHTML = timezone/60 + "h"
+  document.getElementById("timezone").innerHTML = "+" + timezone/-60 + "h"
 } else {
   document.getElementById("timezone").innerHTML = ""
 }
