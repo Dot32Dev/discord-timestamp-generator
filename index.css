@@ -96,8 +96,33 @@ img {
 }
 
 a {
-  color: #99aab5;
   /*color: deepskyblue;*/
+  display: inline-block;
+  background-color: hsl(225deg 6% 27%);
+  color: white;
+  padding: 0.7em;
+  margin: 0.2em;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
+  max-width: fit-content;
+}
+
+a:hover {
+  /*text-decoration: underline;*/
+  color: deepskyblue;
+}
+
+a:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+span {
+  color: #3ca45c;
+  background-color: #202225;
+  /*background-color: #3ca45c;*/
+  /*font-family: monospace;*/
 }
 
 #copy {
