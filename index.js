@@ -30,7 +30,7 @@ function timestamp(){
 }
 function timestampglobal(){
   var global_year = document.getElementById("year").value
-  var global_month = document.getElementById("month").value
+  var global_month = document.getElementById("month").value-1 // edit here
   var global_day = document.getElementById("day").value
   var global_hour = document.getElementById("hour").value
   var datum = new Date(Date.UTC(global_year, global_month, global_day, global_hour, 0, 0))
@@ -115,7 +115,7 @@ function reset() {
   document.getElementById("days").innerHTML = `${days} days`
 
   document.getElementById("year").value = d.getUTCFullYear()
-  document.getElementById("month").value = d.getUTCMonth()
+  document.getElementById("month").value = d.getUTCMonth() +1 //edit here
   document.getElementById("day").value = d.getUTCDate()
   document.getElementById("hour").value = d.getUTCHours()
 
