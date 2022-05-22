@@ -45,46 +45,63 @@ document.getElementById("month").addEventListener("onchange", (event) => timesta
 document.getElementById("day").addEventListener("onchange", (event) => timestampglobal);
 document.getElementById("hour").addEventListener("onchange", (event) => timestampglobal);
 
-document.getElementById("weeks").onmousedown = function(event) {
-  if (event.which == 3) {
-      weeks = weeks - 1
-  }
-  if (event.which == 1) {
-      weeks = weeks + 1
-  }
+function AdjustWeeks(amount) {
+  weeks += amount
   document.getElementById("weeks").innerHTML = `${weeks} weeks`
   timestamp()
 }
-document.getElementById("days").onmousedown = function(event) {
-  if (event.which == 3) {
-      days = days - 1
-  }
-  if (event.which == 1) {
-      days = days + 1
-  }
+
+function AdjustDays(amount) {
+  days += amount
   document.getElementById("days").innerHTML = `${days} days`
   timestamp()
 }
-document.getElementById("hours").onmousedown = function(event) {
-  if (event.which == 3) {
-      hours = hours - 1
-  }
-  if (event.which == 1) {
-      hours = hours + 1
-  }
+
+function AdjustHours(amount) {
+  hours += amount
   document.getElementById("hours").innerHTML = `${hours} hours`
   timestamp()
 }
-document.getElementById("minutes").onmousedown = function(event) {
-  if (event.which == 3) {
-      minutes = minutes - 1
-  }
-  if (event.which == 1) {
-      minutes = minutes + 1
-  }
+
+function AdjustMinutes(amount) {
+  minutes += amount
   document.getElementById("minutes").innerHTML = `${minutes} minutes`
   timestamp()
 }
+
+function HandleMouseClick(event, adjustFunction)
+{
+  event.preventDefault();
+  if (event.which == 3) {
+    adjustFunction(-1)
+  }
+  if (event.which == 1) {
+    adjustFunction(1)
+  }
+  return false;
+}
+
+function HandleWheel(event, adjustFunction)
+{
+  event.preventDefault();
+  if (event.deltaY > 0) {
+    adjustFunction(-1)
+  }
+  if (event.deltaY < 0) {
+    adjustFunction(1)
+  }
+  return false;
+}
+
+document.getElementById("weeks").onmousedown = event => HandleMouseClick(event, AdjustWeeks)
+document.getElementById("days").onmousedown = event => HandleMouseClick(event, AdjustDays)
+document.getElementById("hours").onmousedown = event => HandleMouseClick(event, AdjustHours)
+document.getElementById("minutes").onmousedown = event => HandleMouseClick(event, AdjustMinutes)
+
+document.getElementById("weeks").onwheel = event => HandleWheel(event, AdjustWeeks)
+document.getElementById("days").onwheel = event => HandleWheel(event, AdjustDays)
+document.getElementById("hours").onwheel = event => HandleWheel(event, AdjustHours)
+document.getElementById("minutes").onwheel = event => HandleWheel(event, AdjustMinutes)
 
 document.getElementById("mode").onchange = function (e) {
   var relative = document.querySelector(".relative")
@@ -132,6 +149,8 @@ function htmlDecode(input) {
 }
 
 setInterval( ()=>{
+  var relative = document.querySelector(".relative")
+  
   d = new Date()
   year = d.getUTCFullYear()
   month = d.getUTCMonth()
