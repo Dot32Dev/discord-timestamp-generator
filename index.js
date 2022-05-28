@@ -33,7 +33,8 @@ function timestampglobal(){
   var global_month = document.getElementById("month").value-1 // edit here
   var global_day = document.getElementById("day").value
   var global_hour = document.getElementById("hour").value
-  var datum = new Date(Date.UTC(global_year, global_month, global_day, global_hour, 0, 0))
+  var global_minute = document.getElementById("minute").value
+  var datum = new Date(Date.UTC(global_year, global_month, global_day, global_hour, global_minute, 0))
   // return datum.getTime()/1000
   document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
 }
@@ -44,6 +45,7 @@ document.getElementById("year").addEventListener("onchange", (event) => timestam
 document.getElementById("month").addEventListener("onchange", (event) => timestampglobal);
 document.getElementById("day").addEventListener("onchange", (event) => timestampglobal);
 document.getElementById("hour").addEventListener("onchange", (event) => timestampglobal);
+document.getElementById("minute").addEventListener("onchange", (event) => timestampglobal);
 
 function AdjustWeeks(amount) {
   weeks += amount
@@ -135,6 +137,7 @@ function reset() {
   document.getElementById("month").value = d.getUTCMonth() +1 //edit here
   document.getElementById("day").value = d.getUTCDate()
   document.getElementById("hour").value = d.getUTCHours()
+  document.getElementById("minute").value = d.getUTCMinutes()
 
   timestamp()
 }
