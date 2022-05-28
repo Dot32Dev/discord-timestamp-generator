@@ -146,6 +146,20 @@ span {
   background-color: #cd1316;
 }
 
+.look-at-these-guns  {
+  display: flex;
+  justify-content: center;
+  background-color: #2c2f33;
+}
+
+.name span {
+  font-size: 20px;
+  display: block;
+  background: none;
+  color: #99aab5;
+  /*transform: scale(2);*/
+}
+
 
 .highlighted {
   background-color: hsl(225deg 6% 22%);

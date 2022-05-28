@@ -60,13 +60,14 @@
 					<button class="reset" onmousedown="reset()"><i class="material-icons">cached</i></button>
 				</div>
 				<div oncontextmenu="return false;" class="nonrelative" hidden=true style="margin-bottom: 12px;"><!-- oncontextmenu="return false;" -->
-					<p>Date selection is done in UTC time. Your timezone is UTC<span id=timezone>+8</span></p>
-					<textarea id="year" placeholder="Year..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
-					<textarea id="month" placeholder="Month..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
-					<textarea id="day" placeholder="Day..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
-					<textarea id="hour" placeholder="Hour..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
-					<textarea id="minute" placeholder="Minute..." rows=1 cols=7 onchange="timestampglobal()"></textarea>
-
+					<p style="margin:0px;">Date selection is done in UTC time. Your timezone is UTC<span id=timezone>+8</span>.</p>
+					<div class="look-at-these-guns">
+					<div class="name"><span>YEAR</span><textarea id="year" placeholder="Year..." rows=1 cols=7 onchange="timestampglobal()"></textarea></div>
+					<div class="name"><span>MONTH</span><textarea id="month" placeholder="Month..." rows=1 cols=7 onchange="timestampglobal()"></textarea></div>
+					<div class="name"><span>DAY</span><textarea id="day" placeholder="Day..." rows=1 cols=7 onchange="timestampglobal()"></textarea></div>
+					<div class="name"><span>HOUR</span><textarea id="hour" placeholder="Hour..." rows=1 cols=7 onchange="timestampglobal()"></textarea></div>
+					<div class="name"><span>MINUTE</span><textarea id="minute" placeholder="Minute..." rows=1 cols=7 onchange="timestampglobal()"></textarea></div>
+					</div>
 					<button class="reset" onmousedown="reset()"><i class="material-icons">cached</i></button>
 				</div>
 
