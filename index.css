@@ -107,16 +107,8 @@ a {
   text-decoration: none;
   box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
   max-width: fit-content;
-}
-
-a:hover {
-  /*text-decoration: underline;*/
-  color: deepskyblue;
-}
-
-a:active {
-  box-shadow: none;
-  transform: translateY(5px);
+  transition: scale 0.1s;
+  overflow: hidden;
 }
 
 span {
@@ -124,6 +116,35 @@ span {
   background-color: #202225;
   /*background-color: #3ca45c;*/
   /*font-family: monospace;*/
+}
+
+.new {
+/*  color: red;*/
+/*  background-color: #ee4245;*/
+/*background-color: #3ca45c;*/
+  color: white;
+  padding: 15px;
+/*  border-radius: 12px;*/
+  scale: 200%;
+  margin-right: 5px;
+}
+
+a:hover > .new {
+  background-color: #ee4245;
+}
+
+a:hover {
+/*  text-decoration: underline;*/
+  color: deepskyblue;
+/*  outline: 1px solid hsl(225deg 6% 35%);*/
+/*  background: linear-gradient(hsl(225deg 6% 27%), hsl(225deg 6% 23%));*/
+/*  background-color: hsl(225deg 6% 23%);*/
+  scale: 105%;
+}
+
+a:active {
+  box-shadow: none;
+  transform: translateY(5px);
 }
 
 #copy {
@@ -198,6 +219,8 @@ main > div::before {
   background-color: #3ca45c;
   opacity: 0.5;
 }
+
+
 
 /*main > div::after {
   content: " ";
