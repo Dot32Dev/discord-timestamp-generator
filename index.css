@@ -273,6 +273,12 @@ main > div::before {
   }
 }
 
+@media only screen and (max-width: 525px) {
+  .look-at-these-guns {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 360px) {
   .button-container button {
     padding: 8px 16px;
