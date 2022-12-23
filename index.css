@@ -234,3 +234,46 @@ main > div::before {
   background-color: #3ca45c;
   opacity: 0.5;
 }*/
+.button-container {
+  display:inline;
+}
+
+.minus {
+  display: none;
+  background-color: #ee4245;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.plus {
+  display: none;
+  background-color: #3ca45c;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .pc {
+    display: none;
+  }
+  #weeks, #days, #hours, #minutes {
+    border-radius: 0;
+    margin: 0;
+    min-width: 30%;
+  }
+  .minus, .plus {
+    display: inline;
+    color: white;
+/*    width: 10px;*/
+  }
+  .button-container {
+    display:block;
+    margin:10px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .button-container button {
+    padding: 8px 16px;
+  }
+}

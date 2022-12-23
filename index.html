@@ -54,10 +54,10 @@
 			      	</h2>
 
 				<div oncontextmenu="return false;" class="relative" style="margin-bottom: 12px;"><!-- oncontextmenu="return false;" -->
-					<button id="weeks">0 weeks</button>
-					<button id="days">0 days</button>
-					<button id="hours">0 hours</button>
-					<button id="minutes">0 minutes</button>
+					<div class="button-container"><button class="minus minus-week">-</button><button id="weeks">0 weeks</button></button><button class="plus plus-week">+</button></div>
+					<div class="button-container"><button class="minus minus-day">-</button><button id="days">0 days</button></button><button class="plus plus-day">+</button></div>
+					<div class="button-container"><button class="minus minus-hour">-</button><button id="hours">0 hours</button></button><button class="plus plus-hour">+</button></div>
+					<div class="button-container"><button class="minus minus-minute">-</button><button id="minutes">0 minutes</button></button><button class="plus plus-minute">+</button></div>
 
 					<button class="reset" onmousedown="reset()"><i class="material-icons">cached</i></button>
 				</div>

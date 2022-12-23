@@ -166,3 +166,29 @@ setInterval( ()=>{
     timestamp()
   }
 }, 10000)
+
+document.querySelector(".minus-week").onclick = function() {
+ AdjustWeeks(-1) 
+}
+document.querySelector(".minus-day").onclick = function() {
+ AdjustDays(-1) 
+}
+document.querySelector(".minus-hour").onclick = function() {
+ AdjustHours(-1) 
+}
+document.querySelector(".minus-minute").onclick = function() {
+ AdjustMinutes(-1) 
+}
+
+document.querySelector(".plus-week").onclick = function() {
+ AdjustWeeks(1) 
+}
+document.querySelector(".plus-day").onclick = function() {
+ AdjustDays(1) 
+}
+document.querySelector(".plus-hour").onclick = function() {
+ AdjustHours(1) 
+}
+document.querySelector(".plus-minute").onclick = function() {
+ AdjustMinutes(1) 
+}
