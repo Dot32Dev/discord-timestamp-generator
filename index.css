@@ -240,14 +240,14 @@ main > div::before {
 
 .minus {
   display: none;
-  background-color: #ee4245;
+/*  background-color: #ee4245;*/
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 .plus {
   display: none;
-  background-color: #3ca45c;
+/*  background-color: #3ca45c;*/
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -263,7 +263,8 @@ main > div::before {
   }
   .minus, .plus {
     display: inline;
-    color: white;
+    background-color: #99aab5;
+/*    color: white;*/
 /*    width: 10px;*/
   }
   .button-container {
