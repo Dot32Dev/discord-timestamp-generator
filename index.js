@@ -23,6 +23,18 @@ if (timezone > 0) {
   document.getElementById("timezone").innerHTML = ""
 }
 
+Date.prototype.addHours = function(h) {
+  this.setTime(this.getTime() + (h*60*60*1000));
+  return this;
+}
+
+var newYears = new Date(Date.UTC(2023, 0, 0, 0, 0, 0))
+// var newYears = new Date(Date.UTC(2022, 11, 27, 0, 0, 0))
+newYears.addHours(timezone/60)
+document.getElementById("special-new-years").innerHTML = `&lt;t:${newYears.getTime()/1000}:R>`
+
+
+
 function timestamp(){
  var datum = new Date(Date.UTC(year, month, day + days + weeks*7, hour + hours, minute + minutes, second))
  // return datum.getTime()/1000
@@ -142,8 +154,8 @@ function reset() {
   timestamp()
 }
 
-function copy(){
-  navigator.clipboard.writeText(htmlDecode(document.getElementById("special").innerHTML));
+function copy(copyable){
+  navigator.clipboard.writeText(htmlDecode(document.getElementById(copyable).innerHTML));
 }
 
 function htmlDecode(input) {

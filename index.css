@@ -83,7 +83,7 @@ img {
   box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
 }
 
-#special {
+#special, #special-new-years {
   background-color: #99aab5;
   border-radius: 12px;
   border: none;
