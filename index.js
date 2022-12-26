@@ -17,13 +17,13 @@ var second = d.getUTCSeconds()
 var timezone = d.getTimezoneOffset()
 if (timezone > 0) {
   document.getElementById("timezone").innerHTML = timezone/-60 + "h"
-  document.getElementById("fake-hour").innerHTML = timezone/-60
+  // document.getElementById("fake-hour").innerHTML = timezone/-60
 } else if (timezone < 0) {
   document.getElementById("timezone").innerHTML = "+" + timezone/-60 + "h"
-  document.getElementById("fake-hour").innerHTML = "+" + timezone/-60
+  // document.getElementById("fake-hour").innerHTML = "+" + timezone/-60
 } else {
   document.getElementById("timezone").innerHTML = ""
-  document.getElementById("fake-hour").innerHTML = ""
+  // document.getElementById("fake-hour").innerHTML = ""
 }
 
 Date.prototype.addHours = function(h) {
