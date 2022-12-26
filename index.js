@@ -180,7 +180,7 @@ setInterval( ()=>{
   if (relative.hidden == false) {
     timestamp()
   }
-}, 10000)
+}, 1000)
 
 document.querySelector(".minus-week").onclick = function() {
  AdjustWeeks(-1) 
