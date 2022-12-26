@@ -61,7 +61,7 @@ button:active {
   /*color: white;*/
 }
 
-textarea {
+textarea, #fake-hour {
   resize: none;
   border-radius: 12px;
   border: none;
@@ -72,6 +72,22 @@ textarea {
   font-size: 16px;
   margin: 2px;
   font-weight: bold;
+}
+
+#fake-hour {
+  background-color: white;
+  padding: 2px;
+  padding-right: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: gray;
+  transform: translateY(-33%);
+}
+
+#hour {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0px;
 }
 
 img {
