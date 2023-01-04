@@ -3,7 +3,7 @@ body {
   color: white;
   font-family: 'Sen', Arial, Helvetica, sans-serif;
   text-align: center;
-/*  overflow-x: hidden;*/
+  overflow-x: hidden;
   margin:0px;
 }
 
