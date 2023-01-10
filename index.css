@@ -118,7 +118,7 @@ a {
   display: inline-block;
   background-color: hsl(225deg 6% 27%);
   color: white;
-  padding: 0.7em;
+/*  padding: 0.7em;*/
   margin: 0.2em;
   border-radius: 12px;
   text-decoration: none;
@@ -126,6 +126,19 @@ a {
   max-width: fit-content;
   transition: scale 0.1s;
   overflow: hidden;
+/*  display:flex;*/
+}
+
+a p {
+  margin:0;
+  padding: 0.7em;
+  /* width: 10em; */
+  background-color: hsl(225deg 6% 27%);
+  color: white;
+}
+
+a:hover p:not(.data) {
+  color: deepskyblue;
 }
 
 span {
@@ -300,3 +313,15 @@ main > div::before {
     padding: 8px 16px;
   }
 }
+
+.data {
+  /* background-color: #99aab5; */
+  /* background-color: #5865F2; */
+  background-color: #454FBF;
+  /* color: #2c2f33; */
+  color: white;
+}
+
+/* :empty {
+  display: none;
+} */
