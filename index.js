@@ -63,12 +63,14 @@ document.querySelector("#hour").addEventListener("change", (event) => timestampg
 document.querySelector("#minute").addEventListener("change", (event) => timestampglobal);
 
 function AdjustWeeks(amount) {
+  if(amount < 0 && weeks < 1) return
   weeks += amount
   document.querySelector("#weeks").innerText = `${weeks} weeks`
   timestamp()
 }
 
 function AdjustDays(amount) {
+  if(amount < 0 && days < 1) return
   days += amount
   if(days > 6) {
     weeks += Math.floor(days / 7)
@@ -80,6 +82,7 @@ function AdjustDays(amount) {
 }
 
 function AdjustHours(amount) {
+  if(amount < 0 && hours < 1) return
   hours += amount
   if(hours > 23) {
     days += Math.floor(hours / 24)
@@ -91,6 +94,7 @@ function AdjustHours(amount) {
 }
 
 function AdjustMinutes(amount) {
+  if(amount < 0 && minutes < 1) return
   minutes += amount
   if(minutes > 59) {
     hours += Math.floor(minutes / 60)
