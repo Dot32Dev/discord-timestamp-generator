@@ -181,6 +181,12 @@ a:active {
   font-size: 20px;
   background-color: #3ca45c;
   color: white;
+  transition-duration: .1s;
+}
+
+#copy:hover {
+  transform: scale(1.1);
+  transition-duration: .2s;
 }
 
 #copy:active {
@@ -189,9 +195,21 @@ a:active {
 
 
 .reset {
+  display: flexbox;
+  align-self: center;
+
   background-color: #ee4245;
   color: white;
   padding: 0;
+  
+  height: 40%;
+
+  transition-duration: .1s;
+}
+
+.reset:hover {
+  transform: scale(1.2);
+  transition-duration: .2s;
 }
 
 .reset:active {
