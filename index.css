@@ -343,3 +343,28 @@ main > div::before {
 /* :empty {
   display: none;
 } */
+
+.copy-banner {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  opacity:0;
+  color: #202225;
+  background-color: #3ca45c;
+  transition:opacity .2s ease-in-out;
+  font:inherit;
+}
+
+.copy-banner.show {
+  opacity:1;
+}
+
+.copy-banner span {
+  font-size:1.6em
+}
+
+.copy-msg {
+  color: white;
+  background-color: #3ca45c;
+}
