@@ -75,6 +75,7 @@ function AdjustDays(amount) {
     days = days % 7
   }
   document.querySelector("#days").innerText = `${days} days`
+  document.querySelector("#weeks").innerText = `${weeks} weeks`
   timestamp()
 }
 
@@ -85,6 +86,7 @@ function AdjustHours(amount) {
     hours = hours % 24
   }
   document.querySelector("#hours").innerText = `${hours} hours`
+  document.querySelector("#days").innerText = `${days} days`
   timestamp()
 }
 
@@ -95,6 +97,7 @@ function AdjustMinutes(amount) {
     minutes = minutes % 60
   }
   document.getElementById("minutes").innerHTML = `${minutes} minutes`
+  document.querySelector("#hours").innerText = `${hours} hours`
   timestamp()
 }
 
