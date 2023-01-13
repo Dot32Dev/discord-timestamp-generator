@@ -16,14 +16,14 @@ var second = d.getUTCSeconds()
 
 var timezone = d.getTimezoneOffset()
 if (timezone > 0) {
-  document.getElementById("timezone").innerHTML = timezone/-60 + "h"
-  document.getElementById("fake-hour").innerHTML = timezone/-60
+  document.querySelector("#timezone").innerText = timezone/-60 + "h"
+  document.querySelector("#fake-hour").innerText = timezone/-60
 } else if (timezone < 0) {
-  document.getElementById("timezone").innerHTML = "+" + timezone/-60 + "h"
-  document.getElementById("fake-hour").innerHTML = "+" + timezone/-60
+  document.querySelector("#timezone").innerText = "+" + timezone/-60 + "h"
+  document.querySelector("#fake-hour").innerText = "+" + timezone/-60
 } else {
-  document.getElementById("timezone").innerHTML = ""
-  document.getElementById("fake-hour").innerHTML = ""
+  document.querySelector("#timezone").innerText = ""
+  document.querySelector("#fake-hour").innerText = ""
 }
 
 Date.prototype.addHours = function(h) {
@@ -34,54 +34,66 @@ Date.prototype.addHours = function(h) {
 var newYears = new Date(Date.UTC(2023, 0, 1, 0, 0, 0))
 // var newYears = new Date(Date.UTC(2022, 11, 27, 0, 0, 0))
 newYears.addHours(timezone/60)
-// document.getElementById("special-new-years").innerHTML = `&lt;t:${newYears.getTime()/1000}:R>`
+// document.querySelector("#special-new-years").innerText = `<t:${newYears.getTime()/1000}:R>`
 
 
 
 function timestamp(){
  var datum = new Date(Date.UTC(year, month, day + days + weeks*7, hour + hours, minute + minutes, second))
  // return datum.getTime()/1000
- document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
+ document.querySelector("#special").innerText = `<t:${datum.getTime()/1000}:R>`
 }
 function timestampglobal(){
-  var global_year = document.getElementById("year").value
-  var global_month = document.getElementById("month").value-1 // edit here
-  var global_day = document.getElementById("day").value
-  var global_hour = document.getElementById("hour").value
-  var global_minute = document.getElementById("minute").value
+  var global_year = document.querySelector("#year").value
+  var global_month = document.querySelector("#month").value-1 // edit here
+  var global_day = document.querySelector("#day").value
+  var global_hour = document.querySelector("#hour").value
+  var global_minute = document.querySelector("#minute").value
   var datum = new Date(Date.UTC(global_year, global_month, global_day, global_hour, global_minute, 0))
   // return datum.getTime()/1000
-  document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
+  document.querySelector("#special").innerText = `<t:${datum.getTime()/1000}:R>`
 }
 
 timestamp()
 
-document.getElementById("year").addEventListener("onchange", (event) => timestampglobal);
-document.getElementById("month").addEventListener("onchange", (event) => timestampglobal);
-document.getElementById("day").addEventListener("onchange", (event) => timestampglobal);
-document.getElementById("hour").addEventListener("onchange", (event) => timestampglobal);
-document.getElementById("minute").addEventListener("onchange", (event) => timestampglobal);
+document.querySelector("#year").addEventListener("change", (event) => timestampglobal);
+document.querySelector("#month").addEventListener("change", (event) => timestampglobal);
+document.querySelector("#day").addEventListener("change", (event) => timestampglobal);
+document.querySelector("#hour").addEventListener("change", (event) => timestampglobal);
+document.querySelector("#minute").addEventListener("change", (event) => timestampglobal);
 
 function AdjustWeeks(amount) {
   weeks += amount
-  document.getElementById("weeks").innerHTML = `${weeks} weeks`
+  document.querySelector("#weeks").innerText = `${weeks} weeks`
   timestamp()
 }
 
 function AdjustDays(amount) {
   days += amount
-  document.getElementById("days").innerHTML = `${days} days`
+  if(days > 6) {
+    weeks += Math.floor(days / 7)
+    days = days % 7
+  }
+  document.querySelector("#days").innerText = `${days} days`
   timestamp()
 }
 
 function AdjustHours(amount) {
   hours += amount
-  document.getElementById("hours").innerHTML = `${hours} hours`
+  if(hours > 23) {
+    days += Math.floor(hours / 24)
+    hours = hours % 24
+  }
+  document.querySelector("#hours").innerText = `${hours} hours`
   timestamp()
 }
 
 function AdjustMinutes(amount) {
   minutes += amount
+  if(minutes > 59) {
+    hours += Math.floor(minutes / 60)
+    minutes = minutes % 60
+  }
   document.getElementById("minutes").innerHTML = `${minutes} minutes`
   timestamp()
 }
@@ -110,21 +122,21 @@ function HandleWheel(event, adjustFunction)
   return false;
 }
 
-document.getElementById("weeks").onmousedown = event => HandleMouseClick(event, AdjustWeeks)
-document.getElementById("days").onmousedown = event => HandleMouseClick(event, AdjustDays)
-document.getElementById("hours").onmousedown = event => HandleMouseClick(event, AdjustHours)
-document.getElementById("minutes").onmousedown = event => HandleMouseClick(event, AdjustMinutes)
+document.querySelector("#weeks").onmousedown = event => HandleMouseClick(event, AdjustWeeks)
+document.querySelector("#days").onmousedown = event => HandleMouseClick(event, AdjustDays)
+document.querySelector("#hours").onmousedown = event => HandleMouseClick(event, AdjustHours)
+document.querySelector("#minutes").onmousedown = event => HandleMouseClick(event, AdjustMinutes)
 
-document.getElementById("weeks").onwheel = event => HandleWheel(event, AdjustWeeks)
-document.getElementById("days").onwheel = event => HandleWheel(event, AdjustDays)
-document.getElementById("hours").onwheel = event => HandleWheel(event, AdjustHours)
-document.getElementById("minutes").onwheel = event => HandleWheel(event, AdjustMinutes)
+document.querySelector("#weeks").onwheel = event => HandleWheel(event, AdjustWeeks)
+document.querySelector("#days").onwheel = event => HandleWheel(event, AdjustDays)
+document.querySelector("#hours").onwheel = event => HandleWheel(event, AdjustHours)
+document.querySelector("#minutes").onwheel = event => HandleWheel(event, AdjustMinutes)
 
-document.getElementById("mode").onchange = function (e) {
+document.querySelector("#mode").onchange = function (e) {
   var relative = document.querySelector(".relative")
   var nonrelative = document.querySelector(".nonrelative")
 
-  if (document.getElementById("mode").value == "timeframe") {
+  if (document.querySelector("#mode").value == "timeframe") {
     relative.hidden = false
     nonrelative.hidden = true
     reset()
@@ -137,36 +149,31 @@ document.getElementById("mode").onchange = function (e) {
   reset()
 }
 
-//document.getElementByClass("reset").onmousedown = function(event) {
+//document.getElementByClass("reset").onmousedown = function(event) { // getElementsByClassName is the function just sayin, queryselector is better for single element
 function reset() {
   weeks = 0
-  document.getElementById("weeks").innerHTML = `${weeks} weeks`
+  document.querySelector("#weeks").innerText = `${weeks} weeks`
   minutes = 0
-  document.getElementById("minutes").innerHTML = `${minutes} minutes`
+  document.querySelector("#minutes").innerText = `${minutes} minutes`
   hours = 0
-  document.getElementById("hours").innerHTML = `${hours} hours`
+  document.querySelector("#hours").innerText = `${hours} hours`
   days = 0
-  document.getElementById("days").innerHTML = `${days} days`
+  document.querySelector("#days").innerText = `${days} days`
 
-  document.getElementById("year").value = d.getUTCFullYear()
-  document.getElementById("month").value = d.getUTCMonth() +1 //edit here
-  document.getElementById("day").value = d.getUTCDate()
-  document.getElementById("hour").value = d.getUTCHours()
-  document.getElementById("minute").value = d.getUTCMinutes()
+  document.querySelector("#year").value = d.getUTCFullYear()
+  document.querySelector("#month").value = d.getUTCMonth() +1 //edit here
+  document.querySelector("#day").value = d.getUTCDate()
+  document.querySelector("#hour").value = d.getUTCHours()
+  document.querySelector("#minute").value = d.getUTCMinutes()
 
   timestamp()
 }
 
-function copy(copyable){
-  navigator.clipboard.writeText(htmlDecode(document.getElementById(copyable).innerHTML));
+function copy(copyable) {
+  navigator.clipboard.writeText(document.querySelector("#" + copyable).innerText)
 }
 
-function htmlDecode(input) {
-  var doc = new DOMParser().parseFromString(input, "text/html");
-  return doc.documentElement.textContent;
-}
-
-setInterval( ()=>{
+setInterval(() => {
   var relative = document.querySelector(".relative")
   
   d = new Date()
@@ -212,12 +219,12 @@ fetch("https://api.github.com/repos/Dot32IsCool/discord-timestamp-generator")
 .then(response => response.json())
 .then(data => {
   console.log(data.stargazers_count)
-  document.querySelector(".stars").innerHTML = `${data.stargazers_count} Stars`
+  document.querySelector(".stars").innerText = `${data.stargazers_count} Stars`
 })
 
 fetch("https://discord.com/api/guilds/922185010205822976/widget.json")
 .then(response => response.json())
 .then(data => {
   console.log(data.presence_count)
-  document.querySelector(".members").innerHTML = `${data.presence_count} Online`
+  document.querySelector(".members").innerText = `${data.presence_count} Online`
 })
