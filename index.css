@@ -353,18 +353,9 @@ main > div::before {
   color: #202225;
   background-color: #3ca45c;
   transition:opacity .2s ease-in-out;
-  font:inherit;
+  font-size:1.6em;
 }
 
 .copy-banner.show {
   opacity:1;
-}
-
-.copy-banner span {
-  font-size:1.6em
-}
-
-.copy-msg {
-  color: white;
-  background-color: #3ca45c;
 }
