@@ -158,7 +158,14 @@ function reset() {
 }
 
 function copy(copyable){
-  navigator.clipboard.writeText(htmlDecode(document.getElementById(copyable).innerHTML));
+  navigator.clipboard.writeText(htmlDecode(document.getElementById(copyable).innerHTML))
+  .then(() => {
+    let a = document.getElementById("copy-banner")
+    a.classList.add('show')
+    setTimeout(function() {
+      a.classList.remove('show')
+    }, 2000)
+  });
 }
 
 function htmlDecode(input) {
