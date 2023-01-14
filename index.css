@@ -350,10 +350,11 @@ main > div::before {
   left:0;
   right:0;
   opacity:0;
-  color: #202225;
-  background-color: #3ca45c;
+  color: #99aab5;
+  background-color: #202225;
   transition:opacity .2s ease-in-out;
   font-size:1.6em;
+  padding: 0.2em;
 }
 
 .copy-banner.show {
