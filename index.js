@@ -158,14 +158,7 @@ function reset() {
 }
 
 function copy(copyable){
-  navigator.clipboard.writeText(htmlDecode(document.getElementById(copyable).innerHTML))
-  .then(() => {
-    let a = document.getElementById("copy-banner")
-    a.classList.add('show')
-    setTimeout(function() {
-      a.classList.remove('show')
-    }, 2000)
-  });
+  navigator.clipboard.writeText(htmlDecode(document.getElementById(copyable).innerHTML));
 }
 
 function htmlDecode(input) {
@@ -215,16 +208,16 @@ document.querySelector(".plus-minute").onclick = function() {
  AdjustMinutes(1) 
 }
 
-fetch("https://api.github.com/repos/Dot32IsCool/discord-timestamp-generator")
-.then(response => response.json())
-.then(data => {
-  console.log(data.stargazers_count)
-  document.querySelector(".stars").innerHTML = `${data.stargazers_count} Stars`
-})
+// fetch("https://api.github.com/repos/Dot32IsCool/discord-timestamp-generator")
+// .then(response => response.json())
+// .then(data => {
+//   console.log(data.stargazers_count)
+//   document.querySelector(".stars").innerHTML = `${data.stargazers_count} Stars`
+// })
 
-fetch("https://discord.com/api/guilds/922185010205822976/widget.json")
-.then(response => response.json())
-.then(data => {
-  console.log(data.presence_count)
-  document.querySelector(".members").innerHTML = `${data.presence_count} Online`
-})
+// fetch("https://discord.com/api/guilds/922185010205822976/widget.json")
+// .then(response => response.json())
+// .then(data => {
+//   console.log(data.presence_count)
+//   document.querySelector(".members").innerHTML = `${data.presence_count} Online`
+// })
