@@ -36,14 +36,26 @@ var newYears = new Date(Date.UTC(2023, 0, 1, 0, 0, 0))
 newYears.addHours(timezone/60)
 // document.getElementById("special-new-years").innerHTML = `&lt;t:${newYears.getTime()/1000}:R>`
 
+function getTimestampType() {
+  switch (document.getElementById("type").value) {
+    case "coutdown": return "R>"
+    case "hour-short": return "t>"
+    case "hour-long": return "T>"
+    case "date-short": return "d>"
+    case "date-long": return "D>"
+    case "date-time": return "f>"
+    case "date-week": return "F>"
+  }
+  return "R>"
+}
 
-
-function timestamp(){
+function timestamp() {
  var datum = new Date(Date.UTC(year, month, day + days + weeks*7, hour + hours, minute + minutes, second))
  // return datum.getTime()/1000
- document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
+ document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:${getTimestampType()}`
 }
-function timestampglobal(){
+
+function timestampglobal() {
   var global_year = document.getElementById("year").value
   var global_month = document.getElementById("month").value-1 // edit here
   var global_day = document.getElementById("day").value
@@ -51,7 +63,7 @@ function timestampglobal(){
   var global_minute = document.getElementById("minute").value
   var datum = new Date(Date.UTC(global_year, global_month, global_day, global_hour, global_minute, 0))
   // return datum.getTime()/1000
-  document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:R>`
+  document.getElementById("special").innerHTML = `&lt;t:${datum.getTime()/1000}:${getTimestampType()}`
 }
 
 timestamp()
