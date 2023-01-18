@@ -40,7 +40,7 @@ h1 {
 
 select {
   font-family: 'Sen', Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 1em;
   border-radius: 12px;
   background-color: #202225;
   border-style: none;
