@@ -8,5 +8,8 @@ Generate them here: https://discordtimestampgenerator.netlify.app/
 <!-- <img width="400" alt="Screen Shot 2021-07-02 at 5 30 02 pm" src="https://user-images.githubusercontent.com/61964090/124254092-4caf5d00-db5b-11eb-82a7-
 c31a630218d2.png"> -->
 
-<img width="500" alt="Screen Shot 2021-10-13 at 6 20 31 pm" src="https://user-images.githubusercontent.com/61964090/137115143-1fcdaa0d-bb8f-4ea6-bfb6-c49716647b3c.png">
+<!-- <img width="500" alt="Screen Shot 2021-10-13 at 6 20 31 pm" src="https://user-images.githubusercontent.com/61964090/137115143-1fcdaa0d-bb8f-4ea6-bfb6-c49716647b3c.png"> -->
 
+
+
+<img width="1147" alt="Screenshot 2023-01-18 at 13 24 45" src="https://user-images.githubusercontent.com/61964090/213091275-ea240c62-6335-4e61-bd6e-54a313fb7693.png">
