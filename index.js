@@ -149,6 +149,22 @@ document.getElementById("mode").onchange = function (e) {
   reset()
 }
 
+document.querySelector("#type").onchange = function (e) {
+  timestamp()
+
+  // update example image
+  var example = document.querySelector("img")
+  switch (document.getElementById("type").value) {
+    case "coutdown": example.src = "timestamp examples/relative.png"; break;
+    case "hour-short": example.src = "timestamp examples/time.png"; break;
+    case "hour-long": example.src = "timestamp examples/long-time.png"; break;
+    case "date-short": example.src = "timestamp examples/date.png"; break;
+    case "date-long": example.src = "timestamp examples/long-date.png"; break;
+    case "date-time": example.src = "timestamp examples/date-time.png"; break;
+    case "date-week": example.src = "timestamp examples/date-weekday.png"; break;
+  }
+}
+
 //document.getElementByClass("reset").onmousedown = function(event) {
 function reset() {
   weeks = 0
