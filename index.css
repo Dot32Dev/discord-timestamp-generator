@@ -40,11 +40,12 @@ h1 {
 
 select {
   font-family: 'Sen', Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 1em;
   border-radius: 12px;
   background-color: #202225;
   border-style: none;
   color: white;
+  cursor: pointer;
 }
 
 button:hover {
@@ -241,7 +242,7 @@ a:active {
 main {
   display: flex;
   flex-direction: column;
-  min-height: 95vh;
+  min-height: 99vh;
   max-width: 800px;
   margin: 0 auto;
 /*  padding: 20px;*/
@@ -359,4 +360,26 @@ main > div::before {
 
 .copy-banner.show {
   opacity:1;
+}
+
+details > summary {
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: #202225;
+  color: #99aab5;
+  padding: 0.5em;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+details {
+  /* margin: 10px; */
+  padding: 0px 20px;
+}
+
+details > div {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }

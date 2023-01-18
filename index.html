@@ -42,7 +42,7 @@
 			<h1>Discord Relative Timestamp Generator</h1>
 
 			<p>Create a timestamp that automatically counts down the time.</p>
-			<img src="example.png" width=250 alt="Your birthday is in [14 days]">
+			<img src="example.png" height=81 alt="Your birthday is in [14 days]">
 			<p>Every day, hour, and minute, this little embed will count down for you! </p>
 			<p class="pc"> Right click to subtract time (-2 days will convert to "2 days ago", for example)</p>
 
@@ -80,6 +80,24 @@
 
 					<button id="copy" onclick="copy('special')"><i class="material-icons">content_copy</i></span></button>
 				</div>
+				<details>
+					<summary>Advanced options</summary>
+					<div>
+						<p>Select format:
+						<select id="type">
+							<option value="coutdown">Relative</option>
+							<option value="hour-short">Time</option>
+							<option value="hour-long">Long Time</option>
+							<option value="date-short">Date</option>
+							<option value="date-long">Long Date</option>
+							<option value="date-time">Date Time</option>
+							<option value="date-week">Date Weekday</option>
+						</select> </p>
+					</div>
+					<!-- <div>
+						<p>Wrap time:</p>
+					</div> -->
+				</details>
 			</div>
 			<br/>
 			<!-- <div class=highlighted>
@@ -94,7 +112,7 @@
 
 			<!-- <p>Curious how this works? <a href="https://github.com/Dot32IsCool/discord-timestamp-generator">View the source code</a> (and possibly leave a star) <br> Generator created by <a href="https://github.com/Dot32IsCool">Dot32</a>.</p> -->
 			<p>Generator created by <span>Dot32#1186</span>, and is open source on Github under the MIT licence</p>
-			<a href="https://discord.gg/Pswb8khdgQ"><p>Join my Discord server</p><p class="data members">Loading</p></a>
+			<a href="https://discord.gg/Pswb8khdgQ"><p>Join my Discord server</p> <p class="data members">Loading</p></a>
 			<a href="https://github.com/Dot32IsCool/discord-timestamp-generator"><p>Star this project on Github</p><p class="data stars">Loading</p></a>
 			<!-- <br> -->
 			<a href="https://discord.com/api/oauth2/authorize?client_id=1040831863381557321&permissions=277025392640&scope=bot%20applications.commands"><p>Get the Discord bot!</p><p class="data">30+ Servers</p></a>

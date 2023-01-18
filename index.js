@@ -36,9 +36,20 @@ var newYears = new Date(Date.UTC(2023, 0, 1, 0, 0, 0))
 newYears.addHours(timezone/60)
 // document.querySelector("#special-new-years").innerText = `<t:${newYears.getTime()/1000}:R>`
 
+function getTimestampType() {
+  switch (document.getElementById("type").value) {
+    case "coutdown": return "R>"
+    case "hour-short": return "t>"
+    case "hour-long": return "T>"
+    case "date-short": return "d>"
+    case "date-long": return "D>"
+    case "date-time": return "f>"
+    case "date-week": return "F>"
+  }
+  return "R>"
+}
 
-
-function timestamp(){
+function timestamp() {
  var datum = new Date(Date.UTC(year, month, day + days + weeks*7, hour + hours, minute + minutes, second))
  // return datum.getTime()/1000
  document.querySelector("#special").innerText = `<t:${datum.getTime()/1000}:R>`
@@ -156,7 +167,24 @@ document.querySelector("#mode").onchange = function (e) {
   reset()
 }
 
-//document.getElementByClass("reset").onmousedown = function(event) { // getElementsByClassName is the function just sayin, queryselector is better for single element
+document.querySelector("#type").onchange = function (e) {
+  timestamp()
+
+  // update example image
+  var example = document.querySelector("img")
+  switch (document.getElementById("type").value) {
+    case "coutdown": example.src = "timestamp examples/relative.png"; break;
+    case "hour-short": example.src = "timestamp examples/time.png"; break;
+    case "hour-long": example.src = "timestamp examples/long-time.png"; break;
+    case "date-short": example.src = "timestamp examples/date.png"; break;
+    case "date-long": example.src = "timestamp examples/long-date.png"; break;
+    case "date-time": example.src = "timestamp examples/date-time.png"; break;
+    case "date-week": example.src = "timestamp examples/date-weekday.png"; break;
+  }
+}
+
+//document.getElementByClass("reset").onmousedown = function(event) {
+
 function reset() {
   weeks = 0
   document.querySelector("#weeks").innerText = `${weeks} weeks`
