@@ -52,7 +52,7 @@ function getTimestampType() {
 function timestamp() {
  var datum = new Date(Date.UTC(year, month, day + days + weeks*7, hour + hours, minute + minutes, second))
  // return datum.getTime()/1000
- document.querySelector("#special").innerText = `<t:${datum.getTime()/1000}:R>`
+ document.querySelector("#special").innerText = `&lt;t:${datum.getTime()/1000}:${getTimestampType()}`
 }
 function timestampglobal(){
   var global_year = document.querySelector("#year").value
@@ -62,7 +62,7 @@ function timestampglobal(){
   var global_minute = document.querySelector("#minute").value
   var datum = new Date(Date.UTC(global_year, global_month, global_day, global_hour, global_minute, 0))
   // return datum.getTime()/1000
-  document.querySelector("#special").innerText = `<t:${datum.getTime()/1000}:R>`
+  document.querySelector("#special").innerText = `&lt;t:${datum.getTime()/1000}:${getTimestampType()}`
 }
 
 timestamp()
