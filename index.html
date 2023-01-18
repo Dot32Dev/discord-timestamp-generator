@@ -75,19 +75,28 @@
 
 				<h2>...and copy paste this into a Discord message!</h2>
 				<div>
-					<select id="type">
-						<option value="coutdown">countdown</option>
-						<option value="hour-short">time</option>
-						<option value="hour-long">long time</option>
-						<option value="date-short">date</option>
-						<option value="date-long">long date</option>
-						<option value="date-time">date time</option>
-						<option value="date-week">date weekday</option>
-					</select>
 					<p id=special>Javscript failed to load<noscript>: please enable it to run this app</noscript></p>
 
 					<button id="copy" onclick="copy('special')"><i class="material-icons">content_copy</i></span></button>
 				</div>
+				<details>
+					<summary>Advanced options</summary>
+					<div>
+						<p>Select format:
+						<select id="type">
+							<option value="coutdown">Relative</option>
+							<option value="hour-short">Time</option>
+							<option value="hour-long">Long Time</option>
+							<option value="date-short">Date</option>
+							<option value="date-long">Long Date</option>
+							<option value="date-time">Date Time</option>
+							<option value="date-week">Date Weekday</option>
+						</select> </p>
+					</div>
+					<!-- <div>
+						<p>Wrap time:</p>
+					</div> -->
+				</details>
 			</div>
 			<br/>
 			<!-- <div class=highlighted>

@@ -45,6 +45,7 @@ select {
   background-color: #202225;
   border-style: none;
   color: white;
+  cursor: pointer;
 }
 
 button:hover {
@@ -359,4 +360,26 @@ main > div::before {
 
 .copy-banner.show {
   opacity:1;
+}
+
+details > summary {
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: #202225;
+  color: #99aab5;
+  padding: 0.5em;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+details {
+  /* margin: 10px; */
+  padding: 0px 20px;
+}
+
+details > div {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
