@@ -242,7 +242,7 @@ a:active {
 main {
   display: flex;
   flex-direction: column;
-  min-height: 95vh;
+  min-height: 99vh;
   max-width: 800px;
   margin: 0 auto;
 /*  padding: 20px;*/
