@@ -255,4 +255,24 @@ fetch("https://discord.com/api/guilds/922185010205822976/widget.json")
 .then(data => {
   console.log(data.presence_count)
   document.querySelector(".members").innerHTML = `${data.presence_count} Online`
+
+  // Show offline if bot is offline
+  // var members = data.members
+  // var online = 0
+  // for (var i = 0; i < members.length; i++) {
+  //   var member = members[i]
+  //   if (member.username == "Timer Bot") {
+  //     console.log("Found timer bot")
+  //     if (member.status == "online") {
+  //       online = 1
+  //     } else {
+  //       online = 0
+  //     }
+  //   } 
+  // }
+  // if (online == 0) {
+  //   var el = document.querySelector(".server-count")
+  //   el.innerHTML = "Offline"
+  //   el.style.backgroundColor = "#808080"
+  // }
 })
