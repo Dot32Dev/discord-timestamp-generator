@@ -384,3 +384,12 @@ details > div {
 details p {
   margin: 0.1em;
 }
+
+a img {
+  border-radius: 0;
+  height: 4em;
+}
+
+.image-link {
+  background-color: #111214;
+}
