@@ -387,9 +387,16 @@ details p {
 
 a img {
   border-radius: 0;
-  height: 4em;
+  height: 42px;
+  /* height: 4em; */
 }
 
 .image-link {
   background-color: #111214;
+  height: 42px;
+}
+
+.image-link-text {
+  /* background colour gradient */
+  /* background: linear-gradient(0deg, #111214, #202225, #202225); */
 }
