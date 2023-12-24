@@ -31,10 +31,11 @@ Date.prototype.addHours = function(h) {
   return this;
 }
 
-var newYears = new Date(Date.UTC(2023, 0, 1, 0, 0, 0))
+var newYears = new Date(Date.UTC(2024, 0, 1, 0, 0, 0))
+// var newYears = new Date(Date.UTC(2023, 0, 1, 0, 0, 0))
 // var newYears = new Date(Date.UTC(2022, 11, 27, 0, 0, 0))
 newYears.addHours(timezone/60)
-// document.getElementById("special-new-years").innerHTML = `&lt;t:${newYears.getTime()/1000}:R>`
+document.getElementById("special-new-years").innerHTML = `&lt;t:${newYears.getTime()/1000}:R>`
 
 function getTimestampType() {
   switch (document.getElementById("type").value) {
