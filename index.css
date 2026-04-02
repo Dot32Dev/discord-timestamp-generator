@@ -73,12 +73,14 @@ textarea {
   font-size: 16px;
   margin: 2px;
   font-weight: bold;
+  background-color: white;
 }
 
 #fake-hour {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  margin-left: 0px;
+  /* margin-left: 0px; */
+  color: gray;
 }
 
 #hour {
