@@ -62,7 +62,7 @@ button:active {
   /*color: white;*/
 }
 
-textarea, #fake-hour {
+textarea {
   resize: none;
   border-radius: 12px;
   border: none;
@@ -73,16 +73,14 @@ textarea, #fake-hour {
   font-size: 16px;
   margin: 2px;
   font-weight: bold;
+  background-color: white;
 }
 
 #fake-hour {
-  background-color: white;
-  padding: 2px;
-  padding-right: 5px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  /* margin-left: 0px; */
   color: gray;
-  transform: translateY(-33%);
 }
 
 #hour {
